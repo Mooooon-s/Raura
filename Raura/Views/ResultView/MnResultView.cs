@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raura.Presenters
+namespace Raura.Views.ResultView
 {
-    internal class MnPresenter
+    internal class MnResultView
     {
+
     }
 }

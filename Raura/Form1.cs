@@ -1,5 +1,6 @@
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
+using Raura.Views.StartView;
 using System;
 using System.Drawing;
 
@@ -7,35 +8,16 @@ namespace Raura
 {
     public partial class Form1 : Form
     {
+        ucStartScreen startScreen = new ucStartScreen();
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Load_MainScreen(object sender, EventArgs e)
         {
-
-            using OpenFileDialog ofd = new OpenFileDialog();
-
-            ofd.Title = $"이미지 찾기";
-            ofd.Filter = $"이미지 파일|*.jpg;*.jepg;*.png";
-            ofd.Multiselect = false ;
-
-            if (ofd.ShowDialog() != DialogResult.OK)
-                return;
-
-            Mat img = Cv2.ImRead(ofd.FileName);
-
-            if (img.Empty())
-            {
-                MessageBox.Show("이미지를 로드하지 못했습니다.");
-            }
-
-            MessageBox.Show($"가로:{img.Width}, 세로 {img.Height}");
-
-            Bitmap bit = BitmapConverter.ToBitmap(img);
-
-            pictureBox1.Image = bit;
+            panel1.Controls.Add(startScreen);
         }
     }
 }

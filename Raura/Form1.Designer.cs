@@ -1,4 +1,9 @@
-﻿namespace Raura
+﻿using Raura.Models;
+using Raura.Views.MainView;
+using Raura.Views.ResultView;
+using Raura.Views.StartView;
+
+namespace Raura
 {
     partial class Form1
     {
@@ -28,46 +33,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1 = new Panel();
             SuspendLayout();
             // 
-            // button1
+            // panel1
             // 
-            button1.Location = new Point(664, 385);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 53);
-            button1.TabIndex = 0;
-            button1.Text = "이미지 찾기";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(35, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(612, 407);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 450);
+            panel1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
-            Controls.Add(button1);
+            Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Activated += Load_MainScreen;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
-        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

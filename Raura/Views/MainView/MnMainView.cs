@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raura.View
+namespace Raura.Views.MainView
 {
-    internal interface MnMainView
+    internal class MnMainView
     {
     }
 }

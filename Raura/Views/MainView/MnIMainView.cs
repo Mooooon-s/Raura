@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raura.Presenters
+namespace Raura.Views.MainView
 {
-    internal class MnPresenter
+    internal interface MnIMainView
     {
     }
 }
