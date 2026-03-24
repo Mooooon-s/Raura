@@ -1,23 +1,51 @@
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
-using Raura.Views.StartView;
 using System;
 using System.Drawing;
+
+using Raura.Presenters;
+using Raura.Views.StartView;
+using Raura.Views.MainView;
+
 
 namespace Raura
 {
     public partial class Form1 : Form
     {
-        ucStartScreen startScreen = new ucStartScreen();
-
         public Form1()
         {
             InitializeComponent();
+            ShowStartView();
         }
 
         private void Load_MainScreen(object sender, EventArgs e)
         {
-            panel1.Controls.Add(startScreen);
         }
+
+        private void ShowStartView()
+        {
+            var startview = new ucStartScreen();
+            var startPreenter = new MnStartPresenter(startview);
+
+            startPreenter.OnStartRequest += () =>
+            {
+                ShowMainView();
+            };
+
+            ShowView(startview);
+        }
+
+        private void ShowMainView()
+        {
+            var MainView = new ucMainScreen();
+            ShowView(MainView);
+        }
+
+        private void ShowView(UserControl view)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(view);
+        }
+
     }
 }
