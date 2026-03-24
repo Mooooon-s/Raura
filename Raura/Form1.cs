@@ -3,6 +3,11 @@ using OpenCvSharp.Extensions;
 using System;
 using System.Drawing;
 
+using Raura.Presenters;
+using Raura.Views.StartView;
+using Raura.Views.MainView;
+
+
 namespace Raura
 {
     public partial class Form1 : Form
@@ -10,32 +15,37 @@ namespace Raura
         public Form1()
         {
             InitializeComponent();
+            ShowStartView();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Load_MainScreen(object sender, EventArgs e)
         {
-
-            using OpenFileDialog ofd = new OpenFileDialog();
-
-            ofd.Title = $"이미지 찾기";
-            ofd.Filter = $"이미지 파일|*.jpg;*.jepg;*.png";
-            ofd.Multiselect = false ;
-
-            if (ofd.ShowDialog() != DialogResult.OK)
-                return;
-
-            Mat img = Cv2.ImRead(ofd.FileName);
-
-            if (img.Empty())
-            {
-                MessageBox.Show("이미지를 로드하지 못했습니다.");
-            }
-
-            MessageBox.Show($"가로:{img.Width}, 세로 {img.Height}");
-
-            Bitmap bit = BitmapConverter.ToBitmap(img);
-
-            pictureBox1.Image = bit;
         }
+
+        private void ShowStartView()
+        {
+            var startview = new ucStartScreen();
+            var startPreenter = new MnStartPresenter(startview);
+
+            startPreenter.OnStartRequest += () =>
+            {
+                ShowMainView();
+            };
+
+            ShowView(startview);
+        }
+
+        private void ShowMainView()
+        {
+            var MainView = new ucMainScreen();
+            ShowView(MainView);
+        }
+
+        private void ShowView(UserControl view)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(view);
+        }
+
     }
 }

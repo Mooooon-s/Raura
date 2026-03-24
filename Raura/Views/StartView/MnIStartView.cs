@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raura.Presenters
+namespace Raura.Views.StartView
 {
-    internal class MnPresenter
+    internal interface MnIStartView
     {
+        event EventHandler StartRequested;
     }
 }
