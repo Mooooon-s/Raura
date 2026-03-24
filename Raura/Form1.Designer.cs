@@ -1,4 +1,4 @@
-﻿using Raura.Models;
+using Raura.Models;
 using Raura.Views.MainView;
 using Raura.Views.ResultView;
 using Raura.Views.StartView;
