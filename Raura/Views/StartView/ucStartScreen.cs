@@ -15,14 +15,13 @@ namespace Raura.Views.StartView
         public ucStartScreen()
         {
             InitializeComponent();
-            button1.Click += (s, e) => StartRequested?.Invoke(this, EventArgs.Empty);
         }
-
-        public event EventHandler? StartRequested;
 
         private void button1_Click(object sender, EventArgs e)
         {
-           StartRequested?.Invoke(this, EventArgs.Empty);
+            StartRequested?.Invoke(this, EventArgs.Empty);
         }
+
+        public event EventHandler? StartRequested;
     }
 }

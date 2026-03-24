@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Raura.Views.ResultView
 {
-    public partial class ucResultScreen : UserControl
+    public partial class ucResultScreen : UserControl , MnIResultView
     {
         public ucResultScreen()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

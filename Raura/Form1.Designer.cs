@@ -52,7 +52,7 @@ namespace Raura
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
-            Activated += Load_MainScreen;
+            Load += Load_MainScreen;
             ResumeLayout(false);
         }
 
