@@ -28,31 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            TitleLabel = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            StartButton = new Button();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // TitleLabel
             // 
-            button1.Location = new Point(93, 59);
-            button1.Name = "button1";
-            button1.Size = new Size(237, 89);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            TitleLabel.Anchor = AnchorStyles.None;
+            TitleLabel.AutoSize = true;
+            TitleLabel.Font = new Font("맑은 고딕", 20F);
+            TitleLabel.Location = new Point(174, 60);
+            TitleLabel.Name = "TitleLabel";
+            TitleLabel.Size = new Size(134, 37);
+            TitleLabel.TabIndex = 0;
+            TitleLabel.Text = "대진 뽑기";
+            TitleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(TitleLabel, 0, 0);
+            tableLayoutPanel1.Controls.Add(StartButton, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 135F));
+            tableLayoutPanel1.Size = new Size(483, 292);
+            tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            // 
+            // StartButton
+            // 
+            StartButton.Anchor = AnchorStyles.None;
+            StartButton.Font = new Font("맑은 고딕", 15F);
+            StartButton.Location = new Point(129, 206);
+            StartButton.Name = "StartButton";
+            StartButton.Size = new Size(224, 37);
+            StartButton.TabIndex = 0;
+            StartButton.Text = "Start";
+            StartButton.UseVisualStyleBackColor = true;
+            StartButton.Click += button1_Click;
             // 
             // ucStartScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
+            AutoSize = true;
+            Controls.Add(tableLayoutPanel1);
             Name = "ucStartScreen";
-            Size = new Size(1024, 464);
+            Size = new Size(483, 292);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
+        private Label TitleLabel;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button StartButton;
     }
 }

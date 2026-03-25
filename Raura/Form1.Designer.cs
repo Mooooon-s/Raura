@@ -38,7 +38,8 @@ namespace Raura
             // 
             // panel1
             // 
-            panel1.Dock = DockStyle.Fill;
+            panel1.Anchor = AnchorStyles.None;
+            panel1.AutoSize = true;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 450);
@@ -54,6 +55,7 @@ namespace Raura
             Text = "Form1";
             Load += Load_MainScreen;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
