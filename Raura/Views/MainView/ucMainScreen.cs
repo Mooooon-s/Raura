@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Raura.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,19 @@ using System.Windows.Forms;
 
 namespace Raura.Views.MainView
 {
-    public partial class ucMainScreen : UserControl
+    public partial class ucMainScreen : UserControl, MnIMainView
     {
         public ucMainScreen()
         {
             InitializeComponent();
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        public event EventHandler? MainRequested;
     }
 }

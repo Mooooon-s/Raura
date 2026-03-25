@@ -6,6 +6,7 @@ using System.Drawing;
 using Raura.Presenters;
 using Raura.Views.StartView;
 using Raura.Views.MainView;
+using Raura.Views.ResultView;
 
 
 namespace Raura
@@ -38,6 +39,13 @@ namespace Raura
         private void ShowMainView()
         {
             var MainView = new ucMainScreen();
+            var MainPresenter = new MnMainPresenter(MainView);
+
+            MainPresenter.OnMainRequest += () =>
+            {
+                ShowResultView();
+            };
+
             ShowView(MainView);
         }
 
@@ -45,6 +53,13 @@ namespace Raura
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(view);
+        }
+
+        private void ShowResultView()
+        {
+            var ResultView = new ucResultScreen();
+
+            ShowView(ResultView);
         }
 
     }
