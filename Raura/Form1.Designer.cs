@@ -33,12 +33,14 @@ namespace Raura
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Dock = DockStyle.Fill;
+            panel1.Anchor = AnchorStyles.None;
+            panel1.AutoSize = true;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 450);
@@ -50,10 +52,12 @@ namespace Raura
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
             Load += Load_MainScreen;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

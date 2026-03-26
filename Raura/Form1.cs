@@ -51,6 +51,7 @@ namespace Raura
 
         private void ShowView(UserControl view)
         {
+            view.Dock= DockStyle.Fill;
             panel1.Controls.Clear();
             panel1.Controls.Add(view);
         }

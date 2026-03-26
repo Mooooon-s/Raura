@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Raura.Views.StartView
 {
-    public partial class ucStartScreen : UserControl , MnIStartView
+    public partial class ucStartScreen : UserControl, MnIStartView
     {
         public ucStartScreen()
         {
@@ -20,6 +20,11 @@ namespace Raura.Views.StartView
         private void button1_Click(object sender, EventArgs e)
         {
             StartRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         public event EventHandler? StartRequested;
