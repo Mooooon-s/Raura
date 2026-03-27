@@ -1,4 +1,5 @@
 ﻿using Raura.Services.Parsing;
+using Raura.Services.Suffle;
 using Raura.Views.MainView;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,16 @@ namespace Raura.Presenters
     {
         public readonly MnIMainView _view;
         public readonly IParsingService _parsingService;
+        public readonly ISuffleService _suffleService;
 
         public event Action? OnMainRequest;
         public event Action<List<string>>? OnMainInputRequest;
 
-        public MnMainPresenter(MnIMainView view,IParsingService parsingService)
+        public MnMainPresenter(MnIMainView view,IParsingService parsingService,ISuffleService suffleService)
         {
             _view = view;
             _parsingService = parsingService;
+            _suffleService = suffleService;
             _view.MainRequested += OnMainInputRequested;
         }
 
@@ -32,9 +35,20 @@ namespace Raura.Presenters
         {
             string rawText = _view.InputPlayer;
 
+            //Text parsing to List
             List<string> parsingText = _parsingService.ParseService(rawText);
 
-            OnMainInputRequest?.Invoke(parsingText);
+            //check 10 player
+            if (parsingText.Count != 10)
+            {
+                MessageBox.Show($"please entry 10 Player......\nCurrent Player: {parsingText.Count}");
+                return;
+            }
+
+            //suffle List
+            var suffledText = _suffleService.SufflingService(parsingText);
+
+            OnMainInputRequest?.Invoke(suffledText);
         }
     }
 }

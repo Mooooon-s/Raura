@@ -8,6 +8,7 @@ using Raura.Views.StartView;
 using Raura.Views.MainView;
 using Raura.Views.ResultView;
 using Raura.Services.Parsing;
+using Raura.Services.Suffle;
 
 
 namespace Raura
@@ -41,17 +42,12 @@ namespace Raura
         {
             var MainView = new ucMainScreen();            
             var ParsingService = new ParsingService();
+            var SuffleService = new SuffleService();
+            var MainPresenter = new MnMainPresenter(MainView,ParsingService,SuffleService);
 
-            var MainPresenter = new MnMainPresenter(MainView,ParsingService);
-
-            MainPresenter.OnMainInputRequest += (parsingText) =>
+            MainPresenter.OnMainInputRequest += (suffledText) =>
             {
-                if (parsingText.Count != 10) 
-                {
-                    MessageBox.Show($"Current Player: {parsingText.Count} please entry 10 Player......");
-                    return;
-                }
-                ShowResultView();
+                ShowResultView(suffledText);
             };
 
             ShowView(MainView);
@@ -64,7 +60,7 @@ namespace Raura
             panel1.Controls.Add(view);
         }
 
-        private void ShowResultView()
+        private void ShowResultView(List<string> results)
         {
             var ResultView = new ucResultScreen();
 
