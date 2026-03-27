@@ -7,6 +7,7 @@ using Raura.Presenters;
 using Raura.Views.StartView;
 using Raura.Views.MainView;
 using Raura.Views.ResultView;
+using Raura.Services.Parsing;
 
 
 namespace Raura
@@ -38,11 +39,18 @@ namespace Raura
 
         private void ShowMainView()
         {
-            var MainView = new ucMainScreen();
-            var MainPresenter = new MnMainPresenter(MainView);
+            var MainView = new ucMainScreen();            
+            var ParsingService = new ParsingService();
 
-            MainPresenter.OnMainRequest += () =>
+            var MainPresenter = new MnMainPresenter(MainView,ParsingService);
+
+            MainPresenter.OnMainInputRequest += (parsingText) =>
             {
+                if (parsingText.Count != 10) 
+                {
+                    MessageBox.Show($"Current Player: {parsingText.Count} please entry 10 Player......");
+                    return;
+                }
                 ShowResultView();
             };
 
