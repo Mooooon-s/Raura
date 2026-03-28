@@ -37,6 +37,11 @@
             BteamLabel_2 = new Label();
             BteamLabel_4 = new Label();
             BteamLabel_3 = new Label();
+            TOP_B = new PictureBox();
+            JUNGLE_B = new PictureBox();
+            MID_B = new PictureBox();
+            BOT_B = new PictureBox();
+            SUP_B = new PictureBox();
             groupBox2 = new GroupBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             RteamLabel_3 = new Label();
@@ -44,12 +49,27 @@
             RteamLabel_2 = new Label();
             RteamLabel_5 = new Label();
             RteamLabel_4 = new Label();
+            TOP_R = new PictureBox();
+            JUNGLE_R = new PictureBox();
+            MID_R = new PictureBox();
+            BOT_R = new PictureBox();
+            SUP_R = new PictureBox();
             splitContainer1 = new SplitContainer();
             tableLayoutPanel1 = new TableLayoutPanel();
             groupBox1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TOP_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)JUNGLE_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MID_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BOT_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SUP_B).BeginInit();
             groupBox2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TOP_R).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)JUNGLE_R).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MID_R).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BOT_R).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SUP_R).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -104,6 +124,11 @@
             tableLayoutPanel2.Controls.Add(BteamLabel_2, 1, 1);
             tableLayoutPanel2.Controls.Add(BteamLabel_4, 1, 3);
             tableLayoutPanel2.Controls.Add(BteamLabel_3, 1, 2);
+            tableLayoutPanel2.Controls.Add(TOP_B, 0, 0);
+            tableLayoutPanel2.Controls.Add(JUNGLE_B, 0, 1);
+            tableLayoutPanel2.Controls.Add(MID_B, 0, 2);
+            tableLayoutPanel2.Controls.Add(BOT_B, 0, 3);
+            tableLayoutPanel2.Controls.Add(SUP_B, 0, 4);
             tableLayoutPanel2.Location = new Point(6, 29);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 5;
@@ -165,6 +190,51 @@
             BteamLabel_3.TabIndex = 3;
             BteamLabel_3.Text = "label4";
             // 
+            // TOP_B
+            // 
+            TOP_B.Dock = DockStyle.Fill;
+            TOP_B.Location = new Point(303, 3);
+            TOP_B.Name = "TOP_B";
+            TOP_B.Size = new Size(69, 44);
+            TOP_B.TabIndex = 5;
+            TOP_B.TabStop = false;
+            // 
+            // JUNGLE_B
+            // 
+            JUNGLE_B.Dock = DockStyle.Fill;
+            JUNGLE_B.Location = new Point(303, 53);
+            JUNGLE_B.Name = "JUNGLE_B";
+            JUNGLE_B.Size = new Size(69, 44);
+            JUNGLE_B.TabIndex = 6;
+            JUNGLE_B.TabStop = false;
+            // 
+            // MID_B
+            // 
+            MID_B.Dock = DockStyle.Fill;
+            MID_B.Location = new Point(303, 103);
+            MID_B.Name = "MID_B";
+            MID_B.Size = new Size(69, 44);
+            MID_B.TabIndex = 7;
+            MID_B.TabStop = false;
+            // 
+            // BOT_B
+            // 
+            BOT_B.Dock = DockStyle.Fill;
+            BOT_B.Location = new Point(303, 153);
+            BOT_B.Name = "BOT_B";
+            BOT_B.Size = new Size(69, 44);
+            BOT_B.TabIndex = 8;
+            BOT_B.TabStop = false;
+            // 
+            // SUP_B
+            // 
+            SUP_B.Dock = DockStyle.Fill;
+            SUP_B.Location = new Point(303, 203);
+            SUP_B.Name = "SUP_B";
+            SUP_B.Size = new Size(69, 45);
+            SUP_B.TabIndex = 9;
+            SUP_B.TabStop = false;
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(tableLayoutPanel3);
@@ -187,6 +257,11 @@
             tableLayoutPanel3.Controls.Add(RteamLabel_2, 1, 1);
             tableLayoutPanel3.Controls.Add(RteamLabel_5, 1, 3);
             tableLayoutPanel3.Controls.Add(RteamLabel_4, 1, 2);
+            tableLayoutPanel3.Controls.Add(TOP_R, 0, 0);
+            tableLayoutPanel3.Controls.Add(JUNGLE_R, 0, 1);
+            tableLayoutPanel3.Controls.Add(MID_R, 0, 2);
+            tableLayoutPanel3.Controls.Add(BOT_R, 0, 3);
+            tableLayoutPanel3.Controls.Add(SUP_R, 0, 4);
             tableLayoutPanel3.Location = new Point(6, 29);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 5;
@@ -248,6 +323,51 @@
             RteamLabel_4.TabIndex = 8;
             RteamLabel_4.Text = "label9";
             // 
+            // TOP_R
+            // 
+            TOP_R.Dock = DockStyle.Fill;
+            TOP_R.Location = new Point(3, 3);
+            TOP_R.Name = "TOP_R";
+            TOP_R.Size = new Size(60, 44);
+            TOP_R.TabIndex = 10;
+            TOP_R.TabStop = false;
+            // 
+            // JUNGLE_R
+            // 
+            JUNGLE_R.Dock = DockStyle.Fill;
+            JUNGLE_R.Location = new Point(3, 53);
+            JUNGLE_R.Name = "JUNGLE_R";
+            JUNGLE_R.Size = new Size(60, 44);
+            JUNGLE_R.TabIndex = 11;
+            JUNGLE_R.TabStop = false;
+            // 
+            // MID_R
+            // 
+            MID_R.Dock = DockStyle.Fill;
+            MID_R.Location = new Point(3, 103);
+            MID_R.Name = "MID_R";
+            MID_R.Size = new Size(60, 44);
+            MID_R.TabIndex = 12;
+            MID_R.TabStop = false;
+            // 
+            // BOT_R
+            // 
+            BOT_R.Dock = DockStyle.Fill;
+            BOT_R.Location = new Point(3, 153);
+            BOT_R.Name = "BOT_R";
+            BOT_R.Size = new Size(60, 44);
+            BOT_R.TabIndex = 13;
+            BOT_R.TabStop = false;
+            // 
+            // SUP_R
+            // 
+            SUP_R.Dock = DockStyle.Fill;
+            SUP_R.Location = new Point(3, 203);
+            SUP_R.Name = "SUP_R";
+            SUP_R.Size = new Size(60, 45);
+            SUP_R.TabIndex = 14;
+            SUP_R.TabStop = false;
+            // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
@@ -293,9 +413,19 @@
             groupBox1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TOP_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)JUNGLE_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MID_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BOT_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SUP_B).EndInit();
             groupBox2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TOP_R).EndInit();
+            ((System.ComponentModel.ISupportInitialize)JUNGLE_R).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MID_R).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BOT_R).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SUP_R).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -312,11 +442,8 @@
         private Label label1;
         private SplitContainer splitContainer1;
 
-
-
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-
 
         private Label BteamLabel_1;
         private Label BteamLabel_2;
@@ -331,5 +458,19 @@
         private Label RteamLabel_5;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
+
+        //blue Team Icon
+        private PictureBox TOP_B;
+        private PictureBox JUNGLE_B;
+        private PictureBox MID_B;
+        private PictureBox BOT_B;
+        private PictureBox SUP_B;
+
+        //RED Team Icon
+        private PictureBox TOP_R;
+        private PictureBox JUNGLE_R;
+        private PictureBox MID_R;
+        private PictureBox BOT_R;
+        private PictureBox SUP_R;
     }
 }
