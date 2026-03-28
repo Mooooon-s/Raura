@@ -7,6 +7,8 @@ using Raura.Presenters;
 using Raura.Views.StartView;
 using Raura.Views.MainView;
 using Raura.Views.ResultView;
+using Raura.Services.Parsing;
+using Raura.Services.Suffle;
 
 
 namespace Raura
@@ -38,12 +40,14 @@ namespace Raura
 
         private void ShowMainView()
         {
-            var MainView = new ucMainScreen();
-            var MainPresenter = new MnMainPresenter(MainView);
+            var MainView = new ucMainScreen();            
+            var ParsingService = new ParsingService();
+            var SuffleService = new SuffleService();
+            var MainPresenter = new MnMainPresenter(MainView,ParsingService,SuffleService);
 
-            MainPresenter.OnMainRequest += () =>
+            MainPresenter.OnMainInputRequest += (suffledText) =>
             {
-                ShowResultView();
+                ShowResultView(suffledText);
             };
 
             ShowView(MainView);
@@ -56,7 +60,7 @@ namespace Raura
             panel1.Controls.Add(view);
         }
 
-        private void ShowResultView()
+        private void ShowResultView(List<string> results)
         {
             var ResultView = new ucResultScreen();
 

@@ -8,6 +8,7 @@ namespace Raura.Views.MainView
 {
     internal interface MnIMainView
     {
+        string InputPlayer { get; }
         event EventHandler MainRequested;
     }
 }

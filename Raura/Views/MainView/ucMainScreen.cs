@@ -21,9 +21,10 @@ namespace Raura.Views.MainView
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainRequested?.Invoke(this, EventArgs.Empty);
+            MainRequested?.Invoke(this, e);
         }
 
         public event EventHandler? MainRequested;
+        public string InputPlayer => richTextBox1.Text;
     }
 }
