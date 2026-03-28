@@ -8,5 +8,7 @@ namespace Raura.Views.ResultView
 {
     internal interface MnIResultView
     {
+        List<string> Entrys { get; set; }
+        event EventHandler RetryRequested;
     }
 }

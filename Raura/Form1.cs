@@ -62,7 +62,9 @@ namespace Raura
 
         private void ShowResultView(List<string> results)
         {
-            var ResultView = new ucResultScreen();
+            var ResultView = new ucResultScreen(results);
+            var suffleService = new SuffleService();
+            var ResultPresenter = new MnResultPresenter(ResultView,suffleService);
 
             ShowView(ResultView);
         }
