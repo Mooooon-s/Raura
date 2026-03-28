@@ -63,39 +63,26 @@ namespace Raura.Views.ResultView
 
         private void InitializePic()
         {
-            Bitmap topIcon = LoadIcon($"TOP.png");
-            Bitmap jungleBitmap = LoadIcon($"JUNGLE.png");
-            Bitmap midBitmap = LoadIcon($"MID.png");
-            Bitmap botBitmap  =  LoadIcon($"BOT.png");
-            Bitmap supBitmap  =  LoadIcon($"SUP.png");
+            string[] roll = { "TOP", "JUNGLE", "MID", "BOT", "SUP" };
 
-            TeamBluePics = new[] {
-                TOP_B,
-                JUNGLE_B,
-                MID_B,
-                BOT_B,
-                SUP_B,
-            };
+            TeamBluePics = new[] {TOP_B, JUNGLE_B, MID_B, BOT_B, SUP_B };
+            TeamRedPics = new[] { TOP_R, JUNGLE_R, MID_R, BOT_R, SUP_R };
 
-            TeamRedPics = new[] {
-                TOP_R,
-                JUNGLE_R,
-                MID_R,
-                BOT_R,
-                SUP_R,
-            };
+            for(int i=0; i<roll.Length; i++)
+            {
+                Bitmap icon = LoadIcon($"{roll[i]}.png");
+
+                TeamBluePics[i].Image = icon;
+                TeamRedPics[i].Image = icon;
+            }
         }
 
         public void ShowLabel()
         {
+            int idx = teamBlueLabels.Length;
             for (int i = 0; i < teamBlueLabels.Length; i++)
             {
                 teamBlueLabels[i].Text = enrtys[i];
-            }
-
-            int idx = teamBlueLabels.Length;
-            for (int i = 0; i < teamRedLabels.Length; i++)
-            {
                 teamRedLabels[i].Text = enrtys[idx];
                 idx++;
             }
@@ -106,6 +93,7 @@ namespace Raura.Views.ResultView
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resource", iconName);
             Mat Icon = Cv2.ImRead(filePath);
             Bitmap iconBitmap = BitmapConverter.ToBitmap(Icon);
+            iconBitmap.MakeTransparent();
             return iconBitmap;
         }
 
