@@ -27,8 +27,16 @@ namespace Raura.Views.ResultView
         {
             InitializeComponent();
             InitializeLabel(list);
-            InitializePic();
             ShowLabel();
+        }
+
+        public ucResultScreen(List<string> list,bool Israndom)
+        {
+            InitializeComponent();
+            InitializeLabel(list);
+            ShowLabel();
+            if(Israndom)
+                InitializePic();
         }
 
         private void button1_Click(object sender, EventArgs e)

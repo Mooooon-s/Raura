@@ -83,6 +83,7 @@
             checkBox1.Text = "Random Position";
             checkBox1.TextAlign = ContentAlignment.MiddleCenter;
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // splitContainer1
             // 

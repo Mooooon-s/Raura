@@ -45,9 +45,11 @@ namespace Raura
             var SuffleService = new SuffleService();
             var MainPresenter = new MnMainPresenter(MainView,ParsingService,SuffleService);
 
+            var s = MainView.IsCheck;
+
             MainPresenter.OnMainInputRequest += (suffledText) =>
             {
-                ShowResultView(suffledText);
+                ShowResultView(suffledText,MainView.IsCheck);
             };
 
             ShowView(MainView);
@@ -60,9 +62,9 @@ namespace Raura
             panel1.Controls.Add(view);
         }
 
-        private void ShowResultView(List<string> results)
+        private void ShowResultView(List<string> results,bool ischeck)
         {
-            var ResultView = new ucResultScreen(results);
+            var ResultView = new ucResultScreen(results,ischeck);
             var suffleService = new SuffleService();
             var ResultPresenter = new MnResultPresenter(ResultView,suffleService);
 

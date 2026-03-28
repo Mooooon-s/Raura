@@ -24,7 +24,20 @@ namespace Raura.Views.MainView
             MainRequested?.Invoke(this, e);
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                IsCheck = true;
+            else
+                IsCheck = false;
+        }
+
         public event EventHandler? MainRequested;
         public string InputPlayer => richTextBox1.Text;
+        public bool IsCheck
+        {
+            get => checkBox1.Checked;
+            set => checkBox1.Checked = value;
+        }
     }
 }
