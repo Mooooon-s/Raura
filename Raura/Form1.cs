@@ -34,6 +34,7 @@ namespace Raura
             startPreenter.OnStartRequest += () =>
             {
                 ShowMainView();
+                startPreenter.DeleteEvent();
             };
 
             ShowView(startview);
@@ -51,6 +52,7 @@ namespace Raura
             MainPresenter.OnMainInputRequest += (suffledText) =>
             {
                 ShowResultView(suffledText,MainView.IsCheck);
+                MainPresenter.DeleteEvent();
             };
 
             ShowView(MainView);
@@ -61,7 +63,6 @@ namespace Raura
             if (panel1.Controls.Count > 0)
             {
                 Control oldView = panel1.Controls[0];
-
                 panel1.Controls.Remove(oldView);
 
                 oldView.Dispose();

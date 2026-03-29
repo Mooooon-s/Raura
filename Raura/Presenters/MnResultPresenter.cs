@@ -30,5 +30,10 @@ namespace Raura.Presenters
             _view.Entrys.Clear();
             _view.Entrys.AddRange(suffledEnrty);
         }
+
+        public void DeleteEvent()
+        {
+            _view.RetryRequested -= OnRetryRequest;
+        }
     }
 }
