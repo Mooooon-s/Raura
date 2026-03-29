@@ -28,7 +28,7 @@ namespace Raura.Presenters
             var suffledEnrty = _suffleService.SufflingService(_view.Entrys);
 
             _view.Entrys.Clear();
-            _view.Entrys = suffledEnrty;
+            _view.Entrys.AddRange(suffledEnrty);
         }
     }
 }
