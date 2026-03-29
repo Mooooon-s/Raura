@@ -50,5 +50,10 @@ namespace Raura.Presenters
 
             OnMainInputRequest?.Invoke(suffledText);
         }
+
+        public void DeleteEvent()
+        {
+            _view.MainRequested -= OnMainInputRequested;
+        }
     }
 }

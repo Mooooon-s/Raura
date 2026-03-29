@@ -24,5 +24,10 @@ namespace Raura.Presenters
         {
             OnStartRequest?.Invoke();
         }
+
+        public void DeleteEvent()
+        {
+            _view.StartRequested -= OnStartReqested;
+        }
     }
 }

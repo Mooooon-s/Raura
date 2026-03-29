@@ -9,6 +9,7 @@ using Raura.Views.MainView;
 using Raura.Views.ResultView;
 using Raura.Services.Parsing;
 using Raura.Services.Suffle;
+using System.DirectoryServices;
 
 
 namespace Raura
@@ -33,6 +34,7 @@ namespace Raura
             startPreenter.OnStartRequest += () =>
             {
                 ShowMainView();
+                startPreenter.DeleteEvent();
             };
 
             ShowView(startview);
@@ -50,6 +52,7 @@ namespace Raura
             MainPresenter.OnMainInputRequest += (suffledText) =>
             {
                 ShowResultView(suffledText,MainView.IsCheck);
+                MainPresenter.DeleteEvent();
             };
 
             ShowView(MainView);
@@ -57,9 +60,16 @@ namespace Raura
 
         private void ShowView(UserControl view)
         {
-            view.Dock= DockStyle.Fill;
-            panel1.Controls.Clear();
+            if (panel1.Controls.Count > 0)
+            {
+                Control oldView = panel1.Controls[0];
+                panel1.Controls.Remove(oldView);
+
+                oldView.Dispose();
+            }
+
             panel1.Controls.Add(view);
+            view.Dock= DockStyle.Fill;
         }
 
         private void ShowResultView(List<string> results,bool ischeck)

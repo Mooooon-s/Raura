@@ -102,6 +102,7 @@ namespace Raura.Views.ResultView
             Mat Icon = Cv2.ImRead(filePath);
             Bitmap iconBitmap = BitmapConverter.ToBitmap(Icon);
             iconBitmap.MakeTransparent();
+            Icon.Dispose();
             return iconBitmap;
         }
 
