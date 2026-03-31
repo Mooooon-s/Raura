@@ -257,16 +257,16 @@
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
-            tableLayoutPanel3.Controls.Add(RteamLabel_3, 1, 0);
-            tableLayoutPanel3.Controls.Add(RteamLabel_1, 1, 4);
             tableLayoutPanel3.Controls.Add(RteamLabel_2, 1, 1);
-            tableLayoutPanel3.Controls.Add(RteamLabel_5, 1, 3);
-            tableLayoutPanel3.Controls.Add(RteamLabel_4, 1, 2);
             tableLayoutPanel3.Controls.Add(TOP_R, 0, 0);
             tableLayoutPanel3.Controls.Add(JUNGLE_R, 0, 1);
             tableLayoutPanel3.Controls.Add(MID_R, 0, 2);
             tableLayoutPanel3.Controls.Add(BOT_R, 0, 3);
             tableLayoutPanel3.Controls.Add(SUP_R, 0, 4);
+            tableLayoutPanel3.Controls.Add(RteamLabel_1, 1, 0);
+            tableLayoutPanel3.Controls.Add(RteamLabel_3, 1, 2);
+            tableLayoutPanel3.Controls.Add(RteamLabel_5, 1, 4);
+            tableLayoutPanel3.Controls.Add(RteamLabel_4, 1, 3);
             tableLayoutPanel3.Location = new Point(6, 29);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 5;
@@ -282,7 +282,7 @@
             // 
             RteamLabel_3.Anchor = AnchorStyles.None;
             RteamLabel_3.AutoSize = true;
-            RteamLabel_3.Location = new Point(179, 14);
+            RteamLabel_3.Location = new Point(179, 122);
             RteamLabel_3.Name = "RteamLabel_3";
             RteamLabel_3.Size = new Size(73, 25);
             RteamLabel_3.TabIndex = 5;
@@ -292,7 +292,7 @@
             // 
             RteamLabel_1.Anchor = AnchorStyles.None;
             RteamLabel_1.AutoSize = true;
-            RteamLabel_1.Location = new Point(184, 232);
+            RteamLabel_1.Location = new Point(184, 14);
             RteamLabel_1.Name = "RteamLabel_1";
             RteamLabel_1.Size = new Size(63, 25);
             RteamLabel_1.TabIndex = 9;
@@ -312,7 +312,7 @@
             // 
             RteamLabel_5.Anchor = AnchorStyles.None;
             RteamLabel_5.AutoSize = true;
-            RteamLabel_5.Location = new Point(179, 176);
+            RteamLabel_5.Location = new Point(179, 232);
             RteamLabel_5.Name = "RteamLabel_5";
             RteamLabel_5.Size = new Size(73, 25);
             RteamLabel_5.TabIndex = 7;
@@ -322,7 +322,7 @@
             // 
             RteamLabel_4.Anchor = AnchorStyles.None;
             RteamLabel_4.AutoSize = true;
-            RteamLabel_4.Location = new Point(184, 122);
+            RteamLabel_4.Location = new Point(184, 176);
             RteamLabel_4.Name = "RteamLabel_4";
             RteamLabel_4.Size = new Size(63, 25);
             RteamLabel_4.TabIndex = 8;

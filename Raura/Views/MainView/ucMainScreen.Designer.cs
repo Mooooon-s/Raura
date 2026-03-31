@@ -45,11 +45,12 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.None;
+            button1.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
             button1.Location = new Point(595, 393);
             button1.Name = "button1";
             button1.Size = new Size(165, 43);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Suffle!";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -74,9 +75,10 @@
             // 
             // checkBox1
             // 
+            checkBox1.Anchor = AnchorStyles.Top;
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            checkBox1.Location = new Point(558, 49);
+            checkBox1.Location = new Point(597, 49);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(160, 25);
             checkBox1.TabIndex = 2;

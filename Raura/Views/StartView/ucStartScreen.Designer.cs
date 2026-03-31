@@ -2,6 +2,7 @@
 {
     partial class ucStartScreen
     {
+        public const string version = "1.0.0";
         /// <summary> 
         /// 필수 디자이너 변수입니다.
         /// </summary>
@@ -31,6 +32,7 @@
             TitleLabel = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             StartButton = new Button();
+            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,11 +41,11 @@
             TitleLabel.Anchor = AnchorStyles.None;
             TitleLabel.AutoSize = true;
             TitleLabel.Font = new Font("맑은 고딕", 20F);
-            TitleLabel.Location = new Point(174, 60);
+            TitleLabel.Location = new Point(92, 50);
             TitleLabel.Name = "TitleLabel";
-            TitleLabel.Size = new Size(134, 37);
+            TitleLabel.Size = new Size(299, 37);
             TitleLabel.TabIndex = 0;
-            TitleLabel.Text = "대진 뽑기";
+            TitleLabel.Text = "Raura: Who’s with Me?";
             TitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
@@ -52,13 +54,15 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(TitleLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(StartButton, 0, 1);
+            tableLayoutPanel1.Controls.Add(label1, 0, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 135F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 128F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             tableLayoutPanel1.Size = new Size(483, 292);
             tableLayoutPanel1.TabIndex = 1;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
@@ -67,13 +71,23 @@
             // 
             StartButton.Anchor = AnchorStyles.None;
             StartButton.Font = new Font("맑은 고딕", 15F);
-            StartButton.Location = new Point(129, 206);
+            StartButton.Location = new Point(129, 182);
             StartButton.Name = "StartButton";
             StartButton.Size = new Size(224, 37);
             StartButton.TabIndex = 0;
             StartButton.Text = "Start";
             StartButton.UseVisualStyleBackColor = true;
             StartButton.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Location = new Point(373, 277);
+            label1.Name = "label1";
+            label1.Size = new Size(107, 15);
+            label1.TabIndex = 1;
+            label1.Text = "M00_00N";
             // 
             // ucStartScreen
             // 
@@ -92,5 +106,6 @@
         private Label TitleLabel;
         private TableLayoutPanel tableLayoutPanel1;
         private Button StartButton;
+        private Label label1;
     }
 }

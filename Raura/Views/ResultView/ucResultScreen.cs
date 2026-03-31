@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows;
 
 namespace Raura.Views.ResultView
 {
@@ -94,6 +95,8 @@ namespace Raura.Views.ResultView
                 teamRedLabels[i].Text = enrtys[idx];
                 idx++;
             }
+
+            Clipboard.SetText(MakeClipBoardString());
         }
 
         public Bitmap LoadIcon(string iconName)
@@ -104,6 +107,20 @@ namespace Raura.Views.ResultView
             iconBitmap.MakeTransparent();
             Icon.Dispose();
             return iconBitmap;
+        }
+
+        private string MakeClipBoardString()
+        {
+            string s = "TeamBlue: ";
+            for (int i = 0; i< Entrys.Count; i++)
+            {
+                s += Entrys[i];
+                s += " ";
+                if(i == 4)
+                    s += "\nTeamRed: ";
+            }
+
+            return s;
         }
 
         private Label[] teamBlueLabels;
