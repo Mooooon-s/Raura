@@ -18,26 +18,13 @@ namespace Raura.Views.ResultView
 {
     public partial class ucResultScreen : UserControl, MnIResultView
     {
-        public ucResultScreen()
-        {
-            InitializeComponent();
-            //InitializeLabel();
-        }
-
-        public ucResultScreen(List<string> list)
-        {
-            InitializeComponent();
-            InitializeLabel(list);
-            ShowLabel();
-        }
-
         public ucResultScreen(List<string> list,bool Israndom)
         {
             InitializeComponent();
             InitializeLabel(list);
-            ShowLabel();
             if(Israndom)
-                InitializePic();
+                _=InitializePics();
+            ShowLabel();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,21 +57,22 @@ namespace Raura.Views.ResultView
 
         }
 
-        private void InitializePic()
+        private async Task InitializePics()
         {
             string[] roll = { "TOP", "JUNGLE", "MID", "BOT", "SUP" };
 
-            TeamBluePics = new[] {TOP_B, JUNGLE_B, MID_B, BOT_B, SUP_B };
+            TeamBluePics = new[] { TOP_B, JUNGLE_B, MID_B, BOT_B, SUP_B };
             TeamRedPics = new[] { TOP_R, JUNGLE_R, MID_R, BOT_R, SUP_R };
 
-            for(int i=0; i<roll.Length; i++)
+            for (int i = 0; i < roll.Length; i++)
             {
-                Bitmap icon = LoadIcon($"{roll[i]}.png");
+                Bitmap icon = await Task.Run(()=> LoadIcon($"{roll[i]}.png"));
 
                 TeamBluePics[i].Image = icon;
                 TeamRedPics[i].Image = icon;
             }
         }
+
 
         public void ShowLabel()
         {
@@ -119,7 +107,6 @@ namespace Raura.Views.ResultView
                 if(i == 4)
                     s += "\nTeamRed: ";
             }
-
             return s;
         }
 
