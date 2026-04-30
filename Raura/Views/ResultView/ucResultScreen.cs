@@ -37,7 +37,7 @@ namespace Raura.Views.ResultView
             InitializeLabel(list);
             ShowLabel();
             if(Israndom)
-                InitializePic();
+                _=InitializePics();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,6 +85,23 @@ namespace Raura.Views.ResultView
                 TeamRedPics[i].Image = icon;
             }
         }
+
+        private async Task InitializePics()
+        {
+            string[] roll = { "TOP", "JUNGLE", "MID", "BOT", "SUP" };
+
+            TeamBluePics = new[] { TOP_B, JUNGLE_B, MID_B, BOT_B, SUP_B };
+            TeamRedPics = new[] { TOP_R, JUNGLE_R, MID_R, BOT_R, SUP_R };
+
+            for (int i = 0; i < roll.Length; i++)
+            {
+                Bitmap icon = await Task.Run(()=> LoadIcon($"{roll[i]}.png"));
+
+                TeamBluePics[i].Image = icon;
+                TeamRedPics[i].Image = icon;
+            }
+        }
+
 
         public void ShowLabel()
         {
